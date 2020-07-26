@@ -141,6 +141,8 @@ rm -rf plymouth-themes
 sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/rings_2/rings_2.plymouth 100
 sudo update-alternatives --config default.plymouth
 sudo update-initramfs -u
+sudo rm /etc/default/grub
+sudo mv config/grub/grub /etc/default/
 sudo update-grub
 
 # rofi-related
