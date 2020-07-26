@@ -30,9 +30,8 @@ source $HOME/.cargo/env
 # LXRandr - monitor settings
 # MPD - music player daemon
 # XFCE4 Panel - dock
-# xfce4-settings - settings manager
 sudo apt-get install -y plymouth-x11 plymouth-themes sddm xorg openbox obconf nitrogen dunst rofi \
-compton compton-conf lxappearance lxinput lxrandr xfce4-panel mpd xbacklight acpi xfce4-settings
+compton compton-conf lxappearance lxinput lxrandr xfce4-panel mpd xbacklight acpi
 
 # if you wish a Debian apps submenu in the desktop menu,
 # uncomment the below block
