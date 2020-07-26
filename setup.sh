@@ -34,7 +34,7 @@ source $HOME/.cargo/env
 sudo apt-get install -y plymouth-x11 plymouth-themes sddm xorg openbox obconf nitrogen dunst rofi \
 compton compton-conf lxappearance lxinput lxrandr xfce4-panel mpd xbacklight acpi menu xfce4-settings
 
-# if you a wish a Debian apps submenu in the desktop menu,
+# if you wish a Debian apps submenu in the desktop menu,
 # uncomment the below block
 # mkdir -p ~/.config/openbox
 # cp /etc/X11/openbox/menu.xml ~/.config/openbox/menu.xml
