@@ -19,7 +19,7 @@ source $HOME/.cargo/env
 # Desktop
 
 # Plymouth - loading (splash) screen
-# SDDM - display manager
+# SLiM - display manager
 # X11 — display server
 # Openbox — window manager
 # obconf — openbox configuration GUI
@@ -32,7 +32,7 @@ source $HOME/.cargo/env
 # LXRandr - monitor settings
 # MPD - music player daemon
 # XFCE4 Panel - dock
-sudo apt-get install -y plymouth-x11 plymouth-themes sddm xorg openbox obconf nitrogen dunst rofi \
+sudo apt-get install -y plymouth-x11 plymouth-themes slim xorg openbox obconf nitrogen dunst rofi \
 compton compton-conf lxappearance lxinput lxrandr xfce4-panel mpd xbacklight acpi
 
 # if you wish a Debian apps submenu in the desktop menu,
@@ -80,18 +80,12 @@ rm -rf install_alacritty
 
 # Themes
 
-# SDDM theme
-sudo apt-get install -y \
-gstreamer1.0-libav phonon4qt5-backend-gstreamer \
-gstreamer1.0-plugins-good qml-module-qtquick-controls \
-qml-module-qtgraphicaleffects qtmultimedia5-dev \
-libqt5multimedia5-plugins qml-module-qtmultimedia
-
-git clone https://github.com/3ximus/aerial-sddm-theme.git
-sudo mv aerial-sddm-theme /usr/share/sddm/themes
-sudo touch /etc/sddm.conf
-sudo echo "[Theme]" >> /etc/sddm.conf
-sudo echo "Current=aerial-sddm-theme" >> /etc/sddm.conf
+# SLiM theme
+git clone https://github.com/adi1090x/slim_themes.git
+sudo mv slime_themes/themes/* /usr/share/slim/themes/
+sudo rm -rf slim_themes
+sudo rm /etc/slim.conf
+sudo mv /config/slim/slim.conf /etc/
 
 # icons
 sudo add-apt-repository ppa:daniruiz/flat-remix
