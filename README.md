@@ -1,5 +1,7 @@
 # AfterLife
 
+![screenshot](screenshot.png)
+
 With introduction of macOS Big Sur Apple stopped to support my MacBook Pro 2012.
 This became a good reason to switch to Linux.
 Here's my configuration of Ubuntu to switch to.
