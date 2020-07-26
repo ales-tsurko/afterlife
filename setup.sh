@@ -7,9 +7,12 @@ sudo apt-get clean
 sudo add-apt-repository universe
 sudo add-apt-repository multiverse
 
-sudo apt-get install -y build-essential unzip ubuntu-restricted-extras flatpak
+sudo apt-get install -y \
+	build-essential python3 python3-setuptools unzip \
+	ubuntu-restricted-extras flatpak
 
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak remote-add --if-not-exists \
+	flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -42,6 +45,25 @@ compton compton-conf lxappearance lxinput lxrandr xfce4-panel mpd xbacklight acp
 # cp /etc/X11/openbox/menu.xml ~/.config/openbox/menu.xml
 # cp /etc/X11/openbox/rc.xml ~/.config/openbox/rc.xml
 # openbox --reconfigure
+
+# touchbar support and gestures settings app
+sudo gpasswd -a $USER input
+su - ${USER}
+sudo apt-get install -y \
+	libinput-tools xdotool wmctrl python3-gi python-gobject \
+	gobject-introspection gir1.2-gtk-3.0
+git clone https://github.com/bulletmark/libinput-gestures.git
+cd libinput-gestures
+sudo make install
+cd ..
+rm -rf libinput-gestures
+libinput-gestures-setup autostart
+libinput-gestures-setup start
+git clone https://gitlab.com/cunidev/gestures
+cd gestures
+sudo python3 setup.py install
+cd ..
+rm -rf gestures
 
 # Polybar 3.4.3 — status bar
 sudo apt-get install -y \
@@ -179,21 +201,7 @@ rm -rf dynamic-wallpaper
 
 
 # Autostart
-touch ~/.config/openbox/autostart
-
-# autorun polybar
-echo "~/.config/polybar/launch.sh" >> ~/.config/openbox/autostart
-
-# autorun dock
-echo "xfce4-panel &" >> ~/.config/openbox/autostart
-
-# set dynamic wallpaper on start
-# replace with below line for a static one chosen with nitrogen
-# echo "nitrogen --restore" >> ~/.config/openbox/autostart
-echo "dwall -s mall &" >> ~/.config/openbox/autostart
-
-# autorun compton on start
-echo "compton" >> ~/.config/openbox/autostart
+mv config/autostart ~/.config/openbox/
 
 
 # Clean up
