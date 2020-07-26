@@ -63,9 +63,9 @@ sudo timedatectl set-timezone Europe/Minsk
 
 # Applications
 
-# Nemo - file manager
+# Thunar - file manager
 # Nomacs - image viewer and browser
-sudo apt-get install -y nemo nomacs
+sudo apt-get install -y thunar nomacs
 # Telegram - messenger
 # Opera - internet browser
 sudo snap install telegram-desktop opera
