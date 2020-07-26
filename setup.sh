@@ -85,6 +85,7 @@ rm -rf polybar
 
 sudo timedatectl set-timezone Europe/Minsk
 
+
 # Applications
 
 # Thunar - file manager
@@ -94,12 +95,9 @@ sudo apt-get install -y thunar nomacs
 # Opera - internet browser
 sudo snap install telegram-desktop opera
 # Alacritty - terminal emulator
-git clone https://gist.github.com/cc8cb59f6d5a1aa95512e81e3dfe64ff.git install_alacritty
-cd install_alacritty/
-chmod +x install-alacritty-ubuntu.sh
-./install-alacritty-ubuntu.sh
-cd ..
-rm -rf install_alacritty
+bash -c "$(wget -qO- https://gist.github.com/ales-tsurko/cc8cb59f6d5a1aa95512e81e3dfe64ff/raw/25edff21ae3757d4602b6e2482fbd67f0cd75f2c/install-alacritty-ubuntu.sh)"
+rm -f ~/.alacritty.yaml
+mv config/alacritty/.alacritty.yaml ~/
 
 
 # Themes
@@ -141,6 +139,31 @@ wget https://github.com/EliverLara/Sweet/releases/download/v1.10.5/Sweet-mars.zi
 unzip "Sweet*.zip" -d ~/.themes/
 rm -f Sweet*.zip
 
+wget -c https://github.com/Jannomag/Yaru-Colors/releases/download/20.04.5/Complete-Yaru-Colors-20.04.5.tar.xz
+tar -xf Complete-Yaru-Colors-20.04.5.tar.xz -C ~/.themes/
+rm -f Complete-Yaru-Colors-20.04.5.tar.xz
+mv ~/.themes/Themes/* ~/.themes/
+rm -rf ~/.themes/Themes
+
+sudo apt-get install -y gtk2-engines-murrine gtk2-engines-pixbuf
+git clone https://github.com/vinceliuice/Layan-gtk-theme.git
+cd Layan-gtk-theme
+chmod +x install.sh
+./install.sh
+cd .. && rm -rf Layan-gtk-theme
+
+git clone https://github.com/vinceliuice/Qogir-theme.git
+cd Qogir-theme
+chmod +x install.sh
+./install.sh
+cd .. && rm -rf Qogir-theme
+
+git clone https://github.com/vinceliuice/Orchis-theme.git
+cd Orchis-theme
+chmod +x install.sh
+./install.sh
+cd .. && rm -rf Orchis-theme
+
 # polybar theme
 git clone https://github.com/adi1090x/polybar-themes.git
 cd polybar-themes/polybar-12
@@ -168,6 +191,10 @@ sudo update-initramfs -u
 sudo rm /etc/default/grub
 sudo mv config/grub/grub /etc/default/
 sudo update-grub
+
+# gnome themes
+sudo apt-get install dconf-cli gconf2 uuid-runtime
+bash -c  "$(wget -qO- https://git.io/vQgMr)" 
 
 # rofi-related
 # fonts
@@ -214,9 +241,6 @@ sudo apt-get autoremove -y gdm3
 # remove everything gnome-related
 sudo apt-get purge -y gnome*
 sudo apt-get autoremove -y
-
-# reinstall gnome terminal
-sudo apt-get install -y gnome-terminal
 
 
 # Done
