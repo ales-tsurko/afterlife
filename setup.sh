@@ -82,7 +82,7 @@ rm -rf install_alacritty
 
 # SLiM theme
 git clone https://github.com/adi1090x/slim_themes.git
-sudo mv slime_themes/themes/* /usr/share/slim/themes/
+sudo mv slim_themes/themes/* /usr/share/slim/themes/
 sudo rm -rf slim_themes
 sudo rm /etc/slim.conf
 sudo mv /config/slim/slim.conf /etc/
