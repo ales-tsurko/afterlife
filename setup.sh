@@ -22,7 +22,6 @@ source $HOME/.cargo/env
 # Desktop
 
 # Plymouth - loading (splash) screen
-# SLiM - display manager
 # X11 — display server
 # Openbox — window manager
 # obconf — openbox configuration GUI
@@ -36,9 +35,14 @@ source $HOME/.cargo/env
 # MPD - music player daemon
 # XFCE4 Panel - dock
 sudo apt-get install -y \
-	plymouth-x11 plymouth-themes slim xorg openbox obconf nitrogen dunst \
+	plymouth-x11 plymouth-themes xorg openbox obconf nitrogen dunst \
 	rofi compton compton-conf lxappearance lxinput lxrandr xfce4-panel mpd \
 	xbacklight acpi screenfetch libnotify-bin
+
+# LightDM - display manager
+sudo apt-get install -y lightdm --no-install-recommends
+sudo apt-get install -y lightdm-gtk-greeter lightdm-gtk-greeter-settings
+sudo mv config/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/
 
 # if you wish a Debian apps submenu in the desktop menu,
 # uncomment the below block
@@ -101,13 +105,6 @@ mv config/alacritty/.alacritty.yaml ~/
 
 
 # Themes
-
-# SLiM theme
-git clone https://github.com/adi1090x/slim_themes.git
-sudo mv slim_themes/themes/* /usr/share/slim/themes/
-sudo rm -rf slim_themes
-sudo rm /etc/slim.conf
-sudo mv /config/slim/slim.conf /etc/
 
 # icons
 sudo add-apt-repository ppa:daniruiz/flat-remix
