@@ -1,5 +1,4 @@
 ~/.config/polybar/launch.sh
 xfce4-panel &
 dwall -s mall &
-xmodmap ~/.Xmodmap
 compton

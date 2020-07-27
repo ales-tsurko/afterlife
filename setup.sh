@@ -166,15 +166,18 @@ git clone https://github.com/adi1090x/polybar-themes.git
 cd polybar-themes/polybar-12
 sudo rm /etc/fonts/conf.d/70-no-bitmaps.conf # enable bitmap fonts
 mkdir -p ~/.local/share/fonts
-mkdir -p ~/.config/polybar
 cp -r fonts/* ~/.local/share/fonts
 cd ../polybar-11
 cp -r fonts/* ~/.local/share/fonts
 cd -
 fc-cache -fv
-cp -r * ~/.config/polybar
 cd ../..
 rm -rf polybar-themes
+cd ~/afterlife
+mv config/polybar ~/.config/
+chmod +x ~/.config/polybar/launch.sh
+chmod +x ~/.config/polybar/tester.sh
+chmod +x ~/.config/polybar/scripts/*
 
 # plymouth theme
 git clone https://github.com/adi1090x/plymouth-themes.git
