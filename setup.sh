@@ -52,6 +52,9 @@ sudo mv config/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/
 # cp /etc/X11/openbox/rc.xml ~/.config/openbox/rc.xml
 # openbox --reconfigure
 
+rm -rf ~/.config/openbox
+mv config/openbox ~/.config/
+
 # touchbar support and gestures settings app
 sudo gpasswd -a $USER input
 su - ${USER}
@@ -161,6 +164,9 @@ chmod +x install.sh
 ./install.sh
 cd .. && rm -rf Orchis-theme
 
+rm -rf ~/.config/gtk-3.0
+mv config/gtk-3.0 ~/.config
+
 # polybar theme
 git clone https://github.com/adi1090x/polybar-themes.git
 cd polybar-themes/polybar-12
@@ -227,10 +233,6 @@ chmod +x install.sh
 ./install.sh
 cd ..
 rm -rf dynamic-wallpaper
-
-
-# Autostart
-mv config/autostart ~/.config/openbox/
 
 
 # Clean up
