@@ -222,22 +222,22 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="W-F1">
+    <keybind key="W-S-1">
       <action name="GoToDesktop">
         <to>1</to>
       </action>
     </keybind>
-    <keybind key="W-F2">
+    <keybind key="W-S-2">
       <action name="GoToDesktop">
         <to>2</to>
       </action>
     </keybind>
-    <keybind key="W-F3">
+    <keybind key="W-S-3">
       <action name="GoToDesktop">
         <to>3</to>
       </action>
     </keybind>
-    <keybind key="W-F4">
+    <keybind key="W-S-4">
       <action name="GoToDesktop">
         <to>4</to>
       </action>
@@ -246,7 +246,7 @@
       <action name="ToggleShowDesktop"/>
     </keybind>
     <!-- Keybindings for windows -->
-    <keybind key="A-F4">
+    <keybind key="W-w">
       <action name="Close"/>
     </keybind>
     <keybind key="A-Escape">
@@ -727,7 +727,7 @@
 
     <focus>yes</focus>
 
-    <desktop>all</desktop>
+    <desktop>1</desktop>
 
     <layer>normal</layer>
 
