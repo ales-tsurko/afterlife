@@ -38,7 +38,7 @@ source $HOME/.cargo/env
 sudo apt-get install -y \
 	plymouth-x11 plymouth-themes slim xorg openbox obconf nitrogen dunst \
 	rofi compton compton-conf lxappearance lxinput lxrandr xfce4-panel mpd \
-	xbacklight acpi screenfetch
+	xbacklight acpi screenfetch libnotify-bin
 
 # if you wish a Debian apps submenu in the desktop menu,
 # uncomment the below block
