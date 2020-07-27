@@ -322,6 +322,11 @@
 	      <command>~/.config/polybar/scripts/runner</command>
       </action>
     </keybind>
+    <keybind key="W-e">
+      <action name="Execute">
+	      <command>alacritty -e nvim</command>
+      </action>
+    </keybind>
     <keybind key="W-t">
       <action name="Execute">
 	      <command>alacritty</command>
@@ -329,7 +334,7 @@
     </keybind>
     <keybind key="W-A-n">
       <action name="Execute">
-	      <command>alacritty -e vim ~/Desktop/notes.md</command>
+	      <command>alacritty -e nvim ~/Desktop/notes.md</command>
       </action>
     </keybind>
     <!-- Launch scrot when Print is pressed -->

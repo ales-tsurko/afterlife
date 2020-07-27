@@ -54,6 +54,7 @@ sudo mv config/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/
 
 rm -rf ~/.config/openbox
 mv config/openbox ~/.config/
+mv extra/notes.md ~/Desktop/
 
 # touchbar support and gestures settings app
 sudo gpasswd -a $USER input
@@ -97,7 +98,8 @@ sudo timedatectl set-timezone Europe/Minsk
 
 # Thunar - file manager
 # Nomacs - image viewer and browser
-sudo apt-get install -y thunar nomacs
+# Neovim
+sudo apt-get install -y thunar nomacs neovim python3-neovim
 # Telegram - messenger
 # Opera - internet browser
 sudo snap install telegram-desktop opera

@@ -1,4 +1,7 @@
 ~/.config/polybar/launch.sh
 xfce4-panel &
 dwall -s mall &
-compton
+compton &
+
+# show notes
+alacritty -e nvim ~/Desktop/notes.md &
