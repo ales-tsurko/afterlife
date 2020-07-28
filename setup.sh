@@ -206,10 +206,6 @@ sudo rm /etc/default/grub
 sudo mv config/grub/grub /etc/default/
 sudo update-grub
 
-# gnome themes
-sudo apt-get install -y dconf-cli gconf2 uuid-runtime
-bash -c  "$(wget -qO- https://git.io/vQgMr)" 
-
 # rofi-related
 # fonts
 sudo apt-get install -y fonts-comfortaa fonts-noto fonts-fantasque-sans
