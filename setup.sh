@@ -127,7 +127,7 @@ sudo apt-get install -y papirus-icon-theme
 sudo apt-get install breeze-icon-theme
 
 # openbox themes
-mdkir -p ~/.themes
+mkdir -p ~/.themes
 git clone https://github.com/addy-dclxvi/openbox-theme-collections ~/.themes
 rm -rf ~/.themes/.git
 git clone https://github.com/fikriomar16/OBTheme-Collections.git
