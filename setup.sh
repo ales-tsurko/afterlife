@@ -207,7 +207,7 @@ sudo mv config/grub/grub /etc/default/
 sudo update-grub
 
 # gnome themes
-sudo apt-get install dconf-cli gconf2 uuid-runtime
+sudo apt-get install -y dconf-cli gconf2 uuid-runtime
 bash -c  "$(wget -qO- https://git.io/vQgMr)" 
 
 # rofi-related
