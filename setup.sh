@@ -63,7 +63,7 @@ mv config/openbox ~/.config/
 mkdir -p ~/Desktop
 mv extra/notes.md ~/Desktop/
 
-# touchbar support and gestures settings app
+# touchpad support and gestures settings app
 sudo gpasswd -a $USER input
 sudo -i -u $USER bash << EOF
 EOF
@@ -74,7 +74,7 @@ git clone https://github.com/bulletmark/libinput-gestures.git
 cd libinput-gestures
 sudo make install
 cd ..
-sudo rm -rf libinput-gestures
+rm -rf libinput-gestures
 libinput-gestures-setup autostart
 libinput-gestures-setup start
 git clone https://gitlab.com/cunidev/gestures
