@@ -4,6 +4,8 @@ sudo apt-get update -y
 sudo apt-get upgrade -y
 sudo apt-get dist-upgrade -y
 sudo apt-get clean
+
+sudo apt-get install -y software-properties-common
 sudo add-apt-repository universe
 sudo add-apt-repository multiverse
 
