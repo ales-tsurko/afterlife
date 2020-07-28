@@ -74,14 +74,14 @@ git clone https://github.com/bulletmark/libinput-gestures.git
 cd libinput-gestures
 sudo make install
 cd ..
-rm -rf libinput-gestures
+sudo rm -rf libinput-gestures
 libinput-gestures-setup autostart
 libinput-gestures-setup start
 git clone https://gitlab.com/cunidev/gestures
 cd gestures
 sudo python3 setup.py install
 cd ..
-rm -rf gestures
+sudo rm -rf gestures
 
 # Polybar 3.4.3 — status bar
 sudo apt-get install -y \
