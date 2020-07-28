@@ -65,7 +65,7 @@ mv extra/notes.md ~/Desktop/
 
 # touchbar support and gestures settings app
 sudo gpasswd -a $USER input
-exec bash
+newgrp input
 sudo apt-get install -y \
 	libinput-tools xdotool wmctrl python3-gi python-gobject \
 	gobject-introspection gir1.2-gtk-3.0
