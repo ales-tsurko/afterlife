@@ -55,7 +55,9 @@ sudo mv config/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/
 # openbox --reconfigure
 
 rm -rf ~/.config/openbox
+mkdir -p ~/.config
 mv config/openbox ~/.config/
+mkdir -p ~/Desktop
 mv extra/notes.md ~/Desktop/
 
 # touchbar support and gestures settings app
@@ -93,8 +95,6 @@ git checkout 3.4.3
 cd ..
 rm -rf polybar
 
-sudo timedatectl set-timezone Europe/Minsk
-
 
 # Applications
 
@@ -123,7 +123,7 @@ sudo apt-get install -y papirus-icon-theme
 sudo apt-get install breeze-icon-theme
 
 # openbox themes
-mdkir ~/.themes
+mdkir -p ~/.themes
 git clone https://github.com/addy-dclxvi/openbox-theme-collections ~/.themes
 rm -rf ~/.themes/.git
 git clone https://github.com/fikriomar16/OBTheme-Collections.git
@@ -131,6 +131,7 @@ mv OBTheme-Collections/* ~/.themes/
 rm -rf OBTheme-Collections
 
 # gtk themes
+sudo apt-get install -y gtk2-engines-murrine gtk2-engines-pixbuf
 rm -rf ~/.themes/.git
 git clone https://github.com/addy-dclxvi/gtk-theme-collections 
 mv gtk-theme-collections/* ~/.themes/
@@ -149,7 +150,6 @@ rm -f Complete-Yaru-Colors-20.04.5.tar.xz
 mv ~/.themes/Themes/* ~/.themes/
 rm -rf ~/.themes/Themes
 
-sudo apt-get install -y gtk2-engines-murrine gtk2-engines-pixbuf
 git clone https://github.com/vinceliuice/Layan-gtk-theme.git
 cd Layan-gtk-theme
 chmod +x install.sh
