@@ -9,7 +9,7 @@ sudo add-apt-repository multiverse
 
 sudo apt-get install -y \
 	build-essential python3 python3-setuptools unzip \
-	ubuntu-restricted-extras flatpak
+	software-properties-common ubuntu-restricted-extras flatpak
 
 flatpak remote-add --if-not-exists \
 	flathub https://flathub.org/repo/flathub.flatpakrepo
