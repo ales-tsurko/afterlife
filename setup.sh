@@ -13,7 +13,7 @@ sudo add-apt-repository multiverse
 sudo apt-get update -y
 
 sudo apt-get install -y \
-	build-essential python3 python3-setuptools unzip \
+	build-essential python3 python3-setuptools unzip curl \
 	software-properties-common ubuntu-restricted-extras flatpak
 
 flatpak remote-add --if-not-exists \
