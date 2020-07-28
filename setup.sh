@@ -112,7 +112,7 @@ sudo snap install telegram-desktop opera
 # Alacritty - terminal emulator
 bash -c "$(wget -qO- https://gist.github.com/ales-tsurko/cc8cb59f6d5a1aa95512e81e3dfe64ff/raw/524559dd1557de73f6e33ed0612fe747d89d633f/install-alacritty-ubuntu.sh)"
 rm -f ~/.alacritty.yaml
-mv config/alacritty/.alacritty.yaml ~/
+mv config/alacritty/.alacritty.yml ~/
 
 
 # Themes
