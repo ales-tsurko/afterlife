@@ -14,7 +14,7 @@ sudo apt-get update -y
 
 sudo apt-get install -y \
 	build-essential python3 python3-setuptools unzip curl \
-	software-properties-common ubuntu-restricted-extras flatpak
+	software-properties-common ubuntu-restricted-extras flatpak snapd
 
 flatpak remote-add --if-not-exists \
 	flathub https://flathub.org/repo/flathub.flatpakrepo
