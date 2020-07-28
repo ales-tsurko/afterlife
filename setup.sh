@@ -10,6 +10,7 @@ sudo apt-get clean
 sudo apt-get install -y software-properties-common
 sudo add-apt-repository universe
 sudo add-apt-repository multiverse
+sudo apt-get update -y
 
 sudo apt-get install -y \
 	build-essential python3 python3-setuptools unzip \
