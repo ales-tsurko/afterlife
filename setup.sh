@@ -199,7 +199,7 @@ cd plymouth-themes/pack_4
 sudo cp -r rings_2 /usr/share/plymouth/themes/
 cd ../..
 rm -rf plymouth-themes
-sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/rings_2/rings_2.plymouth 100
+sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/rings_2/rings_2.plymouth 150
 sudo update-alternatives --config default.plymouth
 sudo update-initramfs -u
 sudo rm /etc/default/grub
