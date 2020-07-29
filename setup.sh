@@ -213,12 +213,23 @@ sudo update-grub
 # fonts
 sudo apt-get install -y fonts-comfortaa fonts-noto fonts-fantasque-sans
 
+mkdir -p nerd_fonts && cd nerd_fonts
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FantasqueSansMono.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraMono.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Iosevka.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/SourceCodePro.zip
+unzip "*.zip" -d -d ~/.local/share/fonts/
+cd .. && rm -rf nerd_fonts
+
 wget https://github.com/adi1090x/rofi/raw/master/fonts/feather.ttf
 wget https://github.com/be5invis/Iosevka/releases/download/v3.3.1/ttf-iosevka-3.3.1.zip
 mv feather.ttf ~/.local/share/fonts/
 unzip ttf-iosevka-3.3.1.zip -d ~/.local/share/fonts/
 rm -f ttf-iosevka-3.3.1.zip
+
 sudo fc-cache -fv
+
 # widgets
 mkdir -p ~/.config/rofi
 cd ~/.config/rofi
