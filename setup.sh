@@ -137,6 +137,7 @@ rm -rf OBTheme-Collections
 
 # gtk themes
 sudo apt-get install -y gtk2-engines-murrine gtk2-engines-pixbuf
+sudo apt-get install -y flat-remix-gtk
 rm -rf ~/.themes/.git
 git clone https://github.com/addy-dclxvi/gtk-theme-collections 
 mv gtk-theme-collections/* ~/.themes/
