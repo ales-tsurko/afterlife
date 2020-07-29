@@ -121,11 +121,10 @@ mv config/alacritty/.alacritty.yml ~/
 # icons
 sudo add-apt-repository ppa:daniruiz/flat-remix
 sudo apt-get update -y
-sudo apt-get install flat-remix
+sudo apt-get install -y flat-remix
 sudo add-apt-repository ppa:papirus/papirus
 sudo apt-get update -y
-sudo apt-get install -y papirus-icon-theme
-sudo apt-get install breeze-icon-theme
+sudo apt-get install -y papirus-icon-theme breeze-icon-theme
 
 # openbox themes
 mkdir -p ~/.themes
