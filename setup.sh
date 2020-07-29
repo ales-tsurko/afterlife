@@ -2,6 +2,14 @@
 
 set -e
 
+sudo pacman -S alacritty menumaker
+
+# when all packages installed
+mmaker -v OpenBox3
+
+
+# below is for Ubuntu — should be rewritten for Manjaro
+
 sudo apt-get update -y
 sudo apt-get upgrade -y
 sudo apt-get dist-upgrade -y
