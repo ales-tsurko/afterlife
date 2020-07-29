@@ -95,6 +95,7 @@ sudo apt-get install -y \
 git clone https://github.com/jaagr/polybar.git
 cd polybar
 git checkout 3.4.3
+chmod +x build.sh
 ./build.sh -a -p -n -m -c -i -I -A
 sudo make install
 cd ..
