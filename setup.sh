@@ -96,6 +96,7 @@ git clone https://github.com/jaagr/polybar.git
 cd polybar
 git checkout 3.4.3
 ./build.sh -a -p -n -m -c -i -I -A
+sudo make install
 cd ..
 rm -rf polybar
 
