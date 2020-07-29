@@ -11,7 +11,8 @@ Here's my configuration of Manjaro to switch to.
 
 ## Installation
 
-- install Manjaro command line version
+- install Manjaro command line version, you should choose custom configuration
+  and in **Install Desktop Environments** choose **openbox + openbox themes**
 - `git clone https://github.com/ales-tsurko/afterlife.git`
 - `cd afterlife`
 - `chmod +x setup.sh`
