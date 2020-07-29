@@ -1,5 +1,5 @@
 ~/.config/polybar/launch.sh
-xfce4-panel &
+tint2 &
 dwall -s mall &
 compton
 

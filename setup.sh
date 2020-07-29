@@ -38,10 +38,10 @@ source $HOME/.cargo/env
 # LXInput - keyboard and mouse settings
 # LXRandr - monitor settings
 # MPD - music player daemon
-# XFCE4 Panel - dock
+# Tint2 - dock
 sudo apt-get install -y \
 	plymouth-x11 plymouth-themes xorg openbox obconf nitrogen dunst \
-	rofi compton compton-conf lxappearance lxinput lxrandr xfce4-panel mpd \
+	rofi compton compton-conf lxappearance lxinput lxrandr tint2 mpd \
 	xbacklight acpi screenfetch libnotify-bin
 
 # LightDM - display manager
@@ -62,6 +62,8 @@ mkdir -p ~/.config
 mv config/openbox ~/.config/
 mkdir -p ~/Desktop
 mv extra/notes.md ~/Desktop/
+rm -rf ~/.config/tint2 && mv config/tint2 ~/.config/
+rm -f ~/.config/compton.conf && mv config/compton/compton.conf ~/.config/
 
 # touchpad support and gestures settings app
 sudo gpasswd -a $USER input
@@ -174,7 +176,7 @@ chmod +x install.sh
 cd .. && rm -rf Orchis-theme
 
 rm -rf ~/.config/gtk-3.0
-mv config/gtk-3.0 ~/.config
+mv config/gtk-3.0 ~/.config/
 
 # polybar theme
 git clone https://github.com/adi1090x/polybar-themes.git
@@ -210,12 +212,7 @@ sudo update-grub
 # rofi-related
 # fonts
 sudo apt-get install -y fonts-comfortaa fonts-noto fonts-fantasque-sans
-git clone https://github.com/ryanoasis/nerd-fonts.git
-cd nerd-fonts
-chmod +x install.sh
-./install.sh
-cd ..
-rm -rf nerd-fonts
+
 wget https://github.com/adi1090x/rofi/raw/master/fonts/feather.ttf
 wget https://github.com/be5invis/Iosevka/releases/download/v3.3.1/ttf-iosevka-3.3.1.zip
 mv feather.ttf ~/.local/share/fonts/
