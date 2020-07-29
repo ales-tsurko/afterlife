@@ -219,7 +219,7 @@ wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.z
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraMono.zip
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Iosevka.zip
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/SourceCodePro.zip
-unzip "*.zip" -d -d ~/.local/share/fonts/
+unzip "*.zip" -d ~/.local/share/fonts/
 cd .. && rm -rf nerd_fonts
 
 wget https://github.com/adi1090x/rofi/raw/master/fonts/feather.ttf
