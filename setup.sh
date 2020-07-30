@@ -131,9 +131,6 @@ cd -
 fc-cache -fv
 cd ../..
 rm -rf polybar-themes
-chmod +x ~/.config/polybar/launch.sh
-chmod +x ~/.config/polybar/tester.sh
-chmod +x ~/.config/polybar/scripts/*
 
 # plymouth theme
 git clone https://github.com/adi1090x/plymouth-themes.git
@@ -182,6 +179,9 @@ rm -f ~/.config/compton.conf && mv config/compton/compton.conf ~/.config/
 
 # polybar
 mv config/polybar ~/.config/
+chmod +x ~/.config/polybar/launch.sh
+chmod +x ~/.config/polybar/tester.sh
+chmod +x ~/.config/polybar/scripts/*
 
 # grub
 sudo rm /etc/default/grub
