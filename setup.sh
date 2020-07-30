@@ -190,6 +190,9 @@ mv config/alacritty/.alacritty.yml ~/
 mkdir -p ~/Desktop
 mv extra/notes.md ~/Desktop/
 
+# vconsole
+rm -f /etc/vconsole/vconsole.conf
+sudo mv config/vconsole/* /etc/
 
 # rebuild openbox menu
 mmaker -v OpenBox3
