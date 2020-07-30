@@ -195,6 +195,13 @@ sudo rm -f /etc/vconsole.conf
 mkdir -p ~/.config/dunst
 sudo mv config/dunst/dunstrc ~/.config/dunst
 
+# gestures
+sudo gpasswd -a $USER input
+sudo -i -u $USER bash << EOF
+EOF
+libinput-gestures-setup autostart
+libinput-gestures-setup start
+
 
 # rebuild openbox menu
 mmaker -v OpenBox3
