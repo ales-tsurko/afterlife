@@ -8,7 +8,7 @@ set -e
 # menumaker - menu rebuilder for openbox
 # dunst - notifications
 # Rofi - window switcher, application launcher and dmenu replacement
-# Compton - compositor, for shadows and opacity
+# picom - compositor, for shadows and opacity
 # compton-conf - compton settings
 # Tint2 - dock
 # LXAppearance - GTK settings
@@ -17,7 +17,7 @@ set -e
 # LXRandr - monitor settings
 # polybar - status bar
 # unzip - extracting zip archives
-sudo pacman -S --noconfirm plymouth menumaker dunst rofi compton tint2 \
+sudo pacman -S --noconfirm plymouth menumaker dunst rofi picom tint2 \
 	lxappearance obconf lxinput lxrandr compton-conf polybar unzip
 
 # touchpad settings
@@ -167,9 +167,6 @@ mv config/openbox ~/.config/
 
 # tint2
 rm -rf ~/.config/tint2 && mv config/tint2 ~/.config/
-
-# compton
-rm -f ~/.config/compton.conf && mv config/compton/compton.conf ~/.config/
 
 # polybar
 mv config/polybar ~/.config/
