@@ -44,6 +44,7 @@ source $HOME/.cargo/env
 
 # fonts
 sudo pacman -S --noconfirm noto-fonts ttf-comfortaa ttf-fantasque-sans-mono
+mkdir -p ~/.fonts
 
 mkdir -p nerd_fonts && cd nerd_fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FantasqueSansMono.zip
@@ -51,13 +52,13 @@ wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.z
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraMono.zip
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Iosevka.zip
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/SourceCodePro.zip
-unzip "*.zip" -d ~/.local/share/fonts/
+unzip "*.zip" -d ~/.fonts/
 cd .. && rm -rf nerd_fonts
 
 wget https://github.com/adi1090x/rofi/raw/master/fonts/feather.ttf
 wget https://github.com/be5invis/Iosevka/releases/download/v3.3.1/ttf-iosevka-3.3.1.zip
-mv feather.ttf ~/.local/share/fonts/
-unzip ttf-iosevka-3.3.1.zip -d ~/.local/share/fonts/
+mv feather.ttf ~/.fonts/
+unzip ttf-iosevka-3.3.1.zip -d ~/.fonts/
 rm -f ttf-iosevka-3.3.1.zip
 
 sudo fc-cache -fv
@@ -122,10 +123,9 @@ mv config/gtk-3.0 ~/.config/
 # polybar
 git clone https://github.com/adi1090x/polybar-themes.git
 cd polybar-themes/polybar-12
-mkdir -p ~/.local/share/fonts
-cp -r fonts/* ~/.local/share/fonts
+cp -r fonts/* ~/.fonts
 cd ../polybar-11
-cp -r fonts/* ~/.local/share/fonts
+cp -r fonts/* ~/.fonts
 cd -
 fc-cache -fv
 cd ../..
@@ -136,11 +136,11 @@ chmod +x ~/.config/polybar/scripts/*
 
 # plymouth theme
 git clone https://github.com/adi1090x/plymouth-themes.git
-cd plymouth-themes/pack_4
-sudo cp -r rings_2 /usr/share/plymouth/themes/
+cd plymouth-themes/pack_1
+sudo cp -r colorful /usr/share/plymouth/themes/
 cd ../..
 rm -rf plymouth-themes
-sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/rings_2/rings_2.plymouth 150
+sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/colorful/colorful.plymouth 150
 sudo update-alternatives --config default.plymouth
 sudo update-initramfs -u
 
