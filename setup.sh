@@ -2,121 +2,70 @@
 
 set -e
 
-sudo pacman -S alacritty menumaker
+# Desktop
 
-# when all packages installed
-mmaker -v OpenBox3
+# Plymouth - loading (splash) screen
+# menumaker - menu rebuilder for openbox
+# dunst - notifications
+# Rofi - window switcher, application launcher and dmenu replacement
+# Compton - compositor, for shadows and opacity
+# compton-conf - compton settings
+# Tint2 - dock
+# LXAppearance - GTK settings
+# obconf - openbox settings
+# LXInput - keyboard and mouse settings
+# LXRandr - monitor settings
+# polybar - status bar
+sudo pacman -Sy plymouth menumaker dunst rofi compton tint2 lxappearance obconf \
+	lxinput lxrandr compton-conf polybar
+
+# touchpad settings
+yay -Sy gpointing-device-settings
+
+
+# Apps
+
+# neovim - editor
+# thunar - file browser
+# nomacs - image viewer
+# alacritty - terminal emulator
+# telegram - messenger
+# chromium - web browser
+sudo pacman -Sy neovim python-pynvim thunar nomacs alacritty telegram-desktop chromium
 
 # rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source $HOME/.cargo/env
 
 
-# Desktop
-
-# Plymouth - loading (splash) screen
-# X11 — display server
-# Openbox — window manager
-# obconf — openbox configuration GUI
-# Nitrogen — wallpapers manager
-# Dunst — notifications
-# Rofi — window switcher, application launcher and dmenu replacement
-# Compton — compositor, for shadows and opacity
-# LXAppearance - GTK settings
-# LXInput - keyboard and mouse settings
-# LXRandr - monitor settings
-# MPD - music player daemon
-# Tint2 - dock
-sudo apt-get install -y \
-	plymouth-x11 plymouth-themes xorg openbox obconf nitrogen dunst \
-	rofi compton compton-conf lxappearance lxinput lxrandr tint2 mpd \
-	xbacklight acpi screenfetch libnotify-bin
-
-# LightDM - display manager
-sudo apt-get install -y lightdm --no-install-recommends
-sudo apt-get install -y lightdm-gtk-greeter lightdm-gtk-greeter-settings
-sudo mv config/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/
-
-# if you wish a Debian apps submenu in the desktop menu,
-# uncomment the below block
-# sudo apt-get install -y menu
-# mkdir -p ~/.config/openbox
-# cp /etc/X11/openbox/menu.xml ~/.config/openbox/menu.xml
-# cp /etc/X11/openbox/rc.xml ~/.config/openbox/rc.xml
-# openbox --reconfigure
-
-rm -rf ~/.config/openbox
-mkdir -p ~/.config
-mv config/openbox ~/.config/
-mkdir -p ~/Desktop
-mv extra/notes.md ~/Desktop/
-rm -rf ~/.config/tint2 && mv config/tint2 ~/.config/
-rm -f ~/.config/compton.conf && mv config/compton/compton.conf ~/.config/
-
-# touchpad support and gestures settings app
-sudo gpasswd -a $USER input
-sudo -i -u $USER bash << EOF
-EOF
-sudo apt-get install -y \
-	libinput-tools xdotool wmctrl python3-gi python-gobject \
-	gobject-introspection gir1.2-gtk-3.0
-git clone https://github.com/bulletmark/libinput-gestures.git
-cd libinput-gestures
-sudo make install
-cd ..
-rm -rf libinput-gestures
-libinput-gestures-setup autostart
-libinput-gestures-setup start
-git clone https://gitlab.com/cunidev/gestures
-cd gestures
-sudo python3 setup.py install
-cd ..
-sudo rm -rf gestures
-
-# Polybar 3.4.3 — status bar
-sudo apt-get install -y \
-  cmake cmake-data libcairo2-dev libxcb1-dev libxcb-ewmh-dev \
-  libxcb-icccm4-dev libxcb-image0-dev libxcb-randr0-dev \
-  libxcb-util0-dev libxcb-xkb-dev pkg-config python3-xcbgen \
-  xcb-proto libxcb-xrm-dev libasound2-dev libmpdclient-dev \
-  libiw-dev libcurl4-openssl-dev libpulse-dev \
-  libxcb-composite0-dev xcb libxcb-ewmh2 wireless-tools
-
-git clone https://github.com/jaagr/polybar.git
-cd polybar
-git checkout 3.4.3
-chmod +x build.sh
-./build.sh -a -p -n -m -c -i -A
-cd ..
-rm -rf polybar
-
-
-# Applications
-
-# Thunar - file manager
-# Nomacs - image viewer and browser
-# Neovim
-sudo apt-get install -y thunar nomacs neovim python3-neovim
-# Telegram - messenger
-# Opera - internet browser
-sudo snap install telegram-desktop opera
-# Alacritty - terminal emulator
-bash -c "$(wget -qO- https://gist.github.com/ales-tsurko/cc8cb59f6d5a1aa95512e81e3dfe64ff/raw/524559dd1557de73f6e33ed0612fe747d89d633f/install-alacritty-ubuntu.sh)"
-rm -f ~/.alacritty.yaml
-mv config/alacritty/.alacritty.yml ~/
-
-
 # Themes
 
-# icons
-sudo add-apt-repository ppa:daniruiz/flat-remix
-sudo apt-get update -y
-sudo apt-get install -y flat-remix
-sudo add-apt-repository ppa:papirus/papirus
-sudo apt-get update -y
-sudo apt-get install -y papirus-icon-theme breeze-icon-theme
+# fonts
+sudo apt-get install -y fonts-comfortaa fonts-noto fonts-fantasque-sans
 
-# openbox themes
+mkdir -p nerd_fonts && cd nerd_fonts
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FantasqueSansMono.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraMono.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Iosevka.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/SourceCodePro.zip
+unzip "*.zip" -d ~/.local/share/fonts/
+cd .. && rm -rf nerd_fonts
+
+wget https://github.com/adi1090x/rofi/raw/master/fonts/feather.ttf
+wget https://github.com/be5invis/Iosevka/releases/download/v3.3.1/ttf-iosevka-3.3.1.zip
+mv feather.ttf ~/.local/share/fonts/
+unzip ttf-iosevka-3.3.1.zip -d ~/.local/share/fonts/
+rm -f ttf-iosevka-3.3.1.zip
+
+sudo fc-cache -fv
+
+# icons
+
+yay -Sy flat-remix flat-remix-gtk
+sudo pacman -Sy papirus-icon-theme breeze-icons breeze-gtk
+
+# openbox
 mkdir -p ~/.themes
 git clone https://github.com/addy-dclxvi/openbox-theme-collections ~/.themes
 rm -rf ~/.themes/.git
@@ -124,13 +73,15 @@ git clone https://github.com/fikriomar16/OBTheme-Collections.git
 mv OBTheme-Collections/* ~/.themes/
 rm -rf OBTheme-Collections
 
-# gtk themes
-sudo apt-get install -y gtk2-engines-murrine gtk2-engines-pixbuf
-sudo apt-get install -y flat-remix-gtk
+# gtk
+sudo pacman -Sy gtk-engines breeze-gtk 
+yay -Sy flat-remix-gtk
+
 rm -rf ~/.themes/.git
 git clone https://github.com/addy-dclxvi/gtk-theme-collections 
 mv gtk-theme-collections/* ~/.themes/
 rm -rf gtk-theme-collections
+
 wget https://github.com/EliverLara/Sweet/releases/download/v1.10.5/Sweet.zip
 wget https://github.com/EliverLara/Sweet/releases/download/v1.10.5/Sweet-Ambar-Blue.zip
 wget https://github.com/EliverLara/Sweet/releases/download/v1.10.5/Sweet-Ambar.zip
@@ -166,10 +117,9 @@ cd .. && rm -rf Orchis-theme
 rm -rf ~/.config/gtk-3.0
 mv config/gtk-3.0 ~/.config/
 
-# polybar theme
+# polybar
 git clone https://github.com/adi1090x/polybar-themes.git
 cd polybar-themes/polybar-12
-sudo rm /etc/fonts/conf.d/70-no-bitmaps.conf # enable bitmap fonts
 mkdir -p ~/.local/share/fonts
 cp -r fonts/* ~/.local/share/fonts
 cd ../polybar-11
@@ -178,8 +128,6 @@ cd -
 fc-cache -fv
 cd ../..
 rm -rf polybar-themes
-cd ~/afterlife
-mv config/polybar ~/.config/
 chmod +x ~/.config/polybar/launch.sh
 chmod +x ~/.config/polybar/tester.sh
 chmod +x ~/.config/polybar/scripts/*
@@ -193,32 +141,8 @@ rm -rf plymouth-themes
 sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/rings_2/rings_2.plymouth 150
 sudo update-alternatives --config default.plymouth
 sudo update-initramfs -u
-sudo rm /etc/default/grub
-sudo mv config/grub/grub /etc/default/
-sudo update-grub
 
-# rofi-related
-# fonts
-sudo apt-get install -y fonts-comfortaa fonts-noto fonts-fantasque-sans
-
-mkdir -p nerd_fonts && cd nerd_fonts
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FantasqueSansMono.zip
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraMono.zip
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Iosevka.zip
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/SourceCodePro.zip
-unzip "*.zip" -d ~/.local/share/fonts/
-cd .. && rm -rf nerd_fonts
-
-wget https://github.com/adi1090x/rofi/raw/master/fonts/feather.ttf
-wget https://github.com/be5invis/Iosevka/releases/download/v3.3.1/ttf-iosevka-3.3.1.zip
-mv feather.ttf ~/.local/share/fonts/
-unzip ttf-iosevka-3.3.1.zip -d ~/.local/share/fonts/
-rm -f ttf-iosevka-3.3.1.zip
-
-sudo fc-cache -fv
-
-# widgets
+# rofi
 mkdir -p ~/.config/rofi
 cd ~/.config/rofi
 git clone https://github.com/adi1090x/rofi.git
@@ -236,14 +160,42 @@ cd ..
 rm -rf dynamic-wallpaper
 
 
-# Clean up
+# Configs
 
-# remove gdm3 display manager
-sudo apt-get autoremove -y gdm3
+# lightdm
+sudo mkdir -p /etc/lightdm
+sudo mv config/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/
 
-# remove everything gnome-related
-sudo apt-get purge -y gnome*
-sudo apt-get autoremove -y
+# openbox
+rm -rf ~/.config/openbox
+mkdir -p ~/.config
+mv config/openbox ~/.config/
+
+# tint2
+rm -rf ~/.config/tint2 && mv config/tint2 ~/.config/
+
+# compton
+rm -f ~/.config/compton.conf && mv config/compton/compton.conf ~/.config/
+
+# polybar
+mv config/polybar ~/.config/
+
+# grub
+sudo rm /etc/default/grub
+sudo mv config/grub/grub /etc/default/
+sudo update-grub
+
+# alacritty
+rm -rf ~/.alacritty.yml
+mv config/alacritty/.alacritty.yml ~/
+
+# startup notes
+mkdir -p ~/Desktop
+mv extra/notes.md ~/Desktop/
+
+
+# rebuild openbox menu
+mmaker -v OpenBox3
 
 
 # Done
