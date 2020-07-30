@@ -19,7 +19,7 @@ set -e
 # unzip - extracting zip archives
 sudo pacman -S --noconfirm plymouth menumaker dunst rofi picom tint2 \
 	lxappearance obconf lxinput lxrandr compton-conf polybar unzip \
-	libinput-gestures gestures
+	libinput-gestures gestures libinput xf86-input-libinput
 
 # touchpad settings
 yay -S --noconfirm gpointing-device-settings
