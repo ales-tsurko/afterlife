@@ -139,7 +139,6 @@ sudo plymouth-set-default-theme -R colorful
 
 # rofi
 mkdir -p ~/.config/rofi
-cd ~/.config/rofi
 git clone https://github.com/adi1090x/rofi.git
 cd rofi && chmod +x scripts/*
 cp -r bin scripts themes config.rasi ~/.config/rofi
@@ -158,7 +157,7 @@ rm -rf dynamic-wallpaper
 # Configs
 
 # lightdm
-sudo mkdir -p /etc/lightdm
+sudo mkdir -p /etc/lightdm && sudo rm -f /etc/lightdm/lightdm-gtk-greeter.conf
 sudo mv config/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/
 
 # openbox
