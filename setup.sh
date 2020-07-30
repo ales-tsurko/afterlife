@@ -146,7 +146,7 @@ cp -r bin scripts themes config.rasi ~/.config/rofi
 cd .. && rm -rf rofi
 
 # dwal - dynamic wallpapers
-sudo apt-get install -y x11-xserver-utils feh
+sudo pacman -S --noconfirm xorg-xrandr feh
 git clone https://github.com/adi1090x/dynamic-wallpaper.git
 cd dynamic-wallpaper
 chmod +x install.sh
