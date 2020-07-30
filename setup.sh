@@ -16,8 +16,9 @@ set -e
 # LXInput - keyboard and mouse settings
 # LXRandr - monitor settings
 # polybar - status bar
+# unzip - extracting zip archives
 sudo pacman -S --noconfirm plymouth menumaker dunst rofi compton tint2 \
-	lxappearance obconf lxinput lxrandr compton-conf polybar
+	lxappearance obconf lxinput lxrandr compton-conf polybar unzip
 
 # touchpad settings
 yay -S --noconfirm gpointing-device-settings
