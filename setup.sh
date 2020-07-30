@@ -16,11 +16,11 @@ set -e
 # LXInput - keyboard and mouse settings
 # LXRandr - monitor settings
 # polybar - status bar
-sudo pacman -Sy plymouth menumaker dunst rofi compton tint2 lxappearance obconf \
-	lxinput lxrandr compton-conf polybar
+sudo pacman -S --noconfirm plymouth menumaker dunst rofi compton tint2 \
+	lxappearance obconf lxinput lxrandr compton-conf polybar
 
 # touchpad settings
-yay -Sy gpointing-device-settings
+yay -S --noconfirm gpointing-device-settings
 
 
 # Apps
@@ -31,7 +31,8 @@ yay -Sy gpointing-device-settings
 # alacritty - terminal emulator
 # telegram - messenger
 # chromium - web browser
-sudo pacman -Sy neovim python-pynvim thunar nomacs alacritty telegram-desktop chromium
+sudo pacman -S --noconfirm neovim python-pynvim thunar nomacs alacritty \
+	telegram-desktop chromium
 
 # rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
@@ -41,7 +42,7 @@ source $HOME/.cargo/env
 # Themes
 
 # fonts
-sudo apt-get install -y fonts-comfortaa fonts-noto fonts-fantasque-sans
+sudo pacman -S --noconfirm noto-fonts ttf-comfortaa ttf-fantasque-sans-mono
 
 mkdir -p nerd_fonts && cd nerd_fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FantasqueSansMono.zip
@@ -62,8 +63,8 @@ sudo fc-cache -fv
 
 # icons
 
-yay -Sy flat-remix flat-remix-gtk
-sudo pacman -Sy papirus-icon-theme breeze-icons breeze-gtk
+yay -S --noconfirm flat-remix flat-remix-gtk
+sudo pacman -S --noconfirm papirus-icon-theme breeze-icons breeze-gtk
 
 # openbox
 mkdir -p ~/.themes
@@ -74,8 +75,8 @@ mv OBTheme-Collections/* ~/.themes/
 rm -rf OBTheme-Collections
 
 # gtk
-sudo pacman -Sy gtk-engines breeze-gtk 
-yay -Sy flat-remix-gtk
+sudo pacman -S --noconfirm gtk-engines breeze-gtk 
+yay -S --noconfirm flat-remix-gtk
 
 rm -rf ~/.themes/.git
 git clone https://github.com/addy-dclxvi/gtk-theme-collections 
