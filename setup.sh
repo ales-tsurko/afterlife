@@ -44,6 +44,7 @@ source $HOME/.cargo/env
 
 # fonts
 sudo pacman -S --noconfirm noto-fonts ttf-comfortaa ttf-fantasque-sans-mono
+yay -S --noconfirm ttf-mac-fonts tts-ms-fonts
 mkdir -p ~/.fonts
 
 mkdir -p nerd_fonts && cd nerd_fonts
