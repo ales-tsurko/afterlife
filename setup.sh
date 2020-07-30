@@ -135,7 +135,7 @@ rm -rf polybar-themes
 # plymouth theme
 yay -S --noconfirm plymouth-theme-colorful-git
 sudo plymouth-set-default-theme -l
-sudo plymouth-set-default-theme -R angular
+sudo plymouth-set-default-theme -R colorful
 
 # rofi
 mkdir -p ~/.config/rofi
