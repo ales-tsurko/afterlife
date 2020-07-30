@@ -7,26 +7,6 @@ sudo pacman -S alacritty menumaker
 # when all packages installed
 mmaker -v OpenBox3
 
-
-# below is for Ubuntu — should be rewritten for Manjaro
-
-sudo apt-get update -y
-sudo apt-get upgrade -y
-sudo apt-get dist-upgrade -y
-sudo apt-get clean
-
-sudo apt-get install -y software-properties-common
-sudo add-apt-repository universe
-sudo add-apt-repository multiverse
-sudo apt-get update -y
-
-sudo apt-get install -y \
-	build-essential python3 python3-setuptools unzip curl \
-	software-properties-common ubuntu-restricted-extras flatpak snapd
-
-flatpak remote-add --if-not-exists \
-	flathub https://flathub.org/repo/flathub.flatpakrepo
-
 # rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source $HOME/.cargo/env
