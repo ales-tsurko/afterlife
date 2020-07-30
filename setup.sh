@@ -191,8 +191,12 @@ mkdir -p ~/Desktop
 mv extra/notes.md ~/Desktop/
 
 # vconsole
-rm -f /etc/vconsole/vconsole.conf
-sudo mv config/vconsole/* /etc/
+sudo rm -f /etc/vconsole.conf
+
+# dunst
+mkdir -p ~/.config/dunst
+sudo mv config/dunst/dunstrc ~/.config/dunst
+
 
 # rebuild openbox menu
 mmaker -v OpenBox3
