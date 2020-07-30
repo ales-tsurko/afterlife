@@ -133,14 +133,9 @@ cd ../..
 rm -rf polybar-themes
 
 # plymouth theme
-git clone https://github.com/adi1090x/plymouth-themes.git
-cd plymouth-themes/pack_1
-sudo cp -r colorful /usr/share/plymouth/themes/
-cd ../..
-rm -rf plymouth-themes
-sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/colorful/colorful.plymouth 150
-sudo update-alternatives --config default.plymouth
-sudo update-initramfs -u
+yay -S --noconfirm plymouth-theme-colorful-git
+sudo plymouth-set-default-theme -l
+sudo plymouth-set-default-theme -R angular
 
 # rofi
 mkdir -p ~/.config/rofi
