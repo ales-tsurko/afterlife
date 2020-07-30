@@ -18,7 +18,8 @@ set -e
 # polybar - status bar
 # unzip - extracting zip archives
 sudo pacman -S --noconfirm plymouth menumaker dunst rofi picom tint2 \
-	lxappearance obconf lxinput lxrandr compton-conf polybar unzip
+	lxappearance obconf lxinput lxrandr compton-conf polybar unzip \
+	libinput-gestures gestures
 
 # touchpad settings
 yay -S --noconfirm gpointing-device-settings
