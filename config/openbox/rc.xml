@@ -324,17 +324,17 @@
     </keybind>
     <keybind key="W-e">
       <action name="Execute">
-	      <command>alacritty -e nvim</command>
+	      <command>termite -e nvim</command>
       </action>
     </keybind>
     <keybind key="W-t">
       <action name="Execute">
-	      <command>alacritty</command>
+	      <command>termite</command>
       </action>
     </keybind>
     <keybind key="W-A-n">
       <action name="Execute">
-	      <command>alacritty -e nvim ~/Desktop/notes.md</command>
+	      <command>termite -e "nvim ~/Desktop/notes.md"</command>
       </action>
     </keybind>
     <!-- Launch scrot when Print is pressed -->
@@ -707,8 +707,8 @@
   </menu>
   <applications>
 
-  <application name="Alacritty"
-              class="Alacritty"
+  <application name="termite"
+              class="Termite"
                type="normal">
     <decor>no</decor>
 

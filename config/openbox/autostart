@@ -5,4 +5,4 @@ picom &
 dunst -c ~/.config/dunst/dunstrc &
 
 # show notes
-alacritty -e nvim ~/Desktop/notes.md &
+termite -e "nvim ${HOME}/Desktop/notes.md" &

@@ -63,7 +63,6 @@ rm -f ttf-iosevka-3.3.1.zip
 sudo fc-cache -fv
 
 # icons
-
 yay -S --noconfirm flat-remix flat-remix-gtk
 sudo pacman -S --noconfirm papirus-icon-theme breeze-icons breeze-gtk
 
@@ -151,6 +150,12 @@ chmod +x install.sh
 cd ..
 rm -rf dynamic-wallpaper
 
+# termite
+git clone https://github.com/adi1090x/termite-style
+cd termite-style
+./install
+cd .. && rm -rf termite-style
+
 
 # Configs
 
@@ -177,9 +182,9 @@ sudo rm /etc/default/grub
 sudo mv config/grub/grub /etc/default/
 sudo update-grub
 
-# alacritty
-rm -rf ~/.alacritty.yml
-mv config/alacritty/.alacritty.yml ~/
+# termite
+rm -rf ~/.config/termite
+mv config/termite ~/.config/
 
 # startup notes
 mkdir -p ~/Desktop
