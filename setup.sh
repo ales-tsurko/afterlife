@@ -17,9 +17,13 @@ set -e
 # LXRandr - monitor settings
 # polybar - status bar
 # unzip - extracting zip archives
+# networkmanager
+# gnome-keyring - secrets management
+# seahorse - gnome-keyring gui
 sudo pacman -S --noconfirm plymouth menumaker dunst rofi picom tint2 \
 	lxappearance obconf lxinput lxrandr compton-conf polybar unzip \
-	libinput-gestures gestures libinput xf86-input-libinput
+	libinput-gestures gestures libinput xf86-input-libinput networkmanager \
+	gnome-keyring libsecret seahorse
 
 # touchpad settings
 yay -S --noconfirm gpointing-device-settings
@@ -196,6 +200,13 @@ sudo rm -f /etc/vconsole.conf
 # dunst
 mkdir -p ~/.config/dunst
 sudo mv config/dunst/dunstrc ~/.config/dunst
+
+# git (use gnome keyring)
+git config --global credential.helper /usr/lib/git-core/git-credential-libsecret
+
+# network manager
+systemctl enable NetworkManager.service
+systemctl start NetworkManager.service
 
 # gestures
 sudo gpasswd -a $USER input
