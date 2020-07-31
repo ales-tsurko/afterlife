@@ -31,10 +31,7 @@ yay -S --noconfirm gpointing-device-settings
 # thunar - file browser
 # nomacs - image viewer
 # alacritty - terminal emulator
-# telegram - messenger
-# chromium - web browser
-sudo pacman -S --noconfirm neovim python-pynvim thunar nomacs alacritty \
-	telegram-desktop chromium
+sudo pacman -S --noconfirm neovim python-pynvim thunar nomacs alacritty
 
 # rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y

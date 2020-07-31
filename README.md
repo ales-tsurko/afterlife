@@ -17,6 +17,8 @@ Here's my configuration of Manjaro to switch to.
 - `cd afterlife`
 - `chmod +x setup.sh`
 - `./setup.sh`
+- `chmod +x install_apps.sh`
+- `./install_apps.sh`
 
 
 ### Setup Configuration
