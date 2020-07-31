@@ -110,8 +110,7 @@ rm -rf polybar
 # Neovim
 sudo apt-get install -y thunar nomacs neovim python3-neovim
 # Telegram - messenger
-# Opera - internet browser
-sudo snap install telegram-desktop opera
+sudo snap install telegram-desktop
 # Alacritty - terminal emulator
 bash -c "$(wget -qO- https://gist.github.com/ales-tsurko/cc8cb59f6d5a1aa95512e81e3dfe64ff/raw/524559dd1557de73f6e33ed0612fe747d89d633f/install-alacritty-ubuntu.sh)"
 rm -f ~/.alacritty.yaml
