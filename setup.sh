@@ -16,13 +16,13 @@ set -e
 # LXRandr - monitor settings
 # polybar - status bar
 # unzip - extracting zip archives
-# networkmanager
+# connman - network manager
 # gnome-keyring - secrets management
 # seahorse - gnome-keyring gui
 # xorg-xbacklight - changing screen brightness
 sudo pacman -S --noconfirm plymouth menumaker dunst picom tint2 \
 	lxappearance obconf lxinput lxrandr compton-conf polybar unzip \
-	libinput-gestures gestures libinput xf86-input-libinput networkmanager \
+	libinput-gestures gestures libinput xf86-input-libinput connman \
 	gnome-keyring libsecret seahorse xorg-xbacklight acpi
 
 # touchpad settings
@@ -205,8 +205,10 @@ sudo mv config/dunst/dunstrc ~/.config/dunst
 git config --global credential.helper /usr/lib/git-core/git-credential-libsecret
 
 # network manager
-systemctl enable NetworkManager.service
-systemctl start NetworkManager.service
+sudo rm -f /etc/connman/main.conf
+sudo mv config/connman/main.conf /etc/connman/
+systemctl enable connman.service
+systemctl start connman.service
 
 # gestures
 sudo gpasswd -a $USER input
