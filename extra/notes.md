@@ -7,6 +7,8 @@ Edit ~/.config/autostart if you don't want to run it on start.
 
 ## Shortcuts
 
+W-space - open app launcher
+
 W-A-n - open this window
 W-r - search and run a program
 W-e - open Neovim

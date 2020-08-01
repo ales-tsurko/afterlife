@@ -7,7 +7,6 @@ set -e
 # Plymouth - loading (splash) screen
 # menumaker - menu rebuilder for openbox
 # dunst - notifications
-# Rofi - window switcher, application launcher and dmenu replacement
 # picom - compositor, for shadows and opacity
 # compton-conf - compton settings
 # Tint2 - dock
@@ -20,13 +19,15 @@ set -e
 # networkmanager
 # gnome-keyring - secrets management
 # seahorse - gnome-keyring gui
-sudo pacman -S --noconfirm plymouth menumaker dunst rofi picom tint2 \
+# xorg-xbacklight - changing screen brightness
+sudo pacman -S --noconfirm plymouth menumaker dunst picom tint2 \
 	lxappearance obconf lxinput lxrandr compton-conf polybar unzip \
 	libinput-gestures gestures libinput xf86-input-libinput networkmanager \
-	gnome-keyring libsecret seahorse
+	gnome-keyring libsecret seahorse xorg-xbacklight acpi
 
 # touchpad settings
-yay -S --noconfirm gpointing-device-settings
+# rofi - window switcher, application launcher and dmenu replacement
+yay -S --noconfirm gpointing-device-settings rofi-git
 
 
 # Apps
@@ -55,6 +56,7 @@ wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.z
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraMono.zip
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Iosevka.zip
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/SourceCodePro.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hermit.zip
 unzip "*.zip" -d ~/.fonts/
 cd .. && rm -rf nerd_fonts
 
@@ -65,6 +67,7 @@ unzip ttf-iosevka-3.3.1.zip -d ~/.fonts/
 rm -f ttf-iosevka-3.3.1.zip
 
 sudo fc-cache -fv
+fc-cache -fv
 
 # icons
 yay -S --noconfirm flat-remix flat-remix-gtk
@@ -138,13 +141,6 @@ yay -S --noconfirm plymouth-theme-colorful-git
 sudo plymouth-set-default-theme -l
 sudo plymouth-set-default-theme -R colorful
 
-# rofi
-mkdir -p ~/.config/rofi
-git clone https://github.com/adi1090x/rofi.git
-cd rofi && chmod +x scripts/*
-cp -r bin scripts themes config.rasi ~/.config/rofi
-cd .. && rm -rf rofi
-
 # dwal - dynamic wallpapers
 sudo pacman -S --noconfirm xorg-xrandr feh
 git clone https://github.com/adi1090x/dynamic-wallpaper.git
@@ -174,6 +170,10 @@ mv config/openbox ~/.config/
 
 # tint2
 rm -rf ~/.config/tint2 && mv config/tint2 ~/.config/
+
+# rofi
+rm -rf ~/.config/rofi
+mv config/rofi ~/.config/
 
 # polybar
 mv config/polybar ~/.config/
