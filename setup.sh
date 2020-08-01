@@ -41,10 +41,6 @@ yay -S --noconfirm gpointing-device-settings rofi-git connman-gtk
 # termite - terminal emulator
 sudo pacman -S --noconfirm neovim python-pynvim termite
 
-# rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-source $HOME/.cargo/env
-
 
 # Themes
 
