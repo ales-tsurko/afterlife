@@ -23,12 +23,11 @@ set -e
 # xf86-video-intel - video driver
 # ufw - cli for firewall configuration
 # gufw - iptables frontend (gui for ufw)
-# bitwarden - password manager
 sudo pacman -S --noconfirm plymouth menumaker dunst picom tint2 \
 	lxappearance obconf lxinput lxrandr compton-conf polybar unzip \
 	libinput-gestures gestures libinput xf86-input-libinput connman \
 	gnome-keyring libsecret seahorse xorg-xbacklight acpi xf86-video-intel \
-	intltool ufw gufw bitwarden-cli-bin
+	intltool ufw gufw
 
 # touchpad settings
 # rofi - window switcher, application launcher and dmenu replacement
@@ -39,11 +38,8 @@ yay -S --noconfirm gpointing-device-settings rofi-git connman-gtk
 # Apps
 
 # neovim - editor
-# thunar - file browser
-# nomacs - image viewer
-# alacritty - terminal emulator
-sudo pacman -S --noconfirm neovim python-pynvim thunar-gtk3 \
-	thunar-archive-plugin-gtk3 nomacs alacritty
+# termite - terminal emulator
+sudo pacman -S --noconfirm neovim python-pynvim termite
 
 # rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
