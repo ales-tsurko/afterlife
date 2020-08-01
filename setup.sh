@@ -20,14 +20,18 @@ set -e
 # gnome-keyring - secrets management
 # seahorse - gnome-keyring gui
 # xorg-xbacklight - changing screen brightness
+# xf86-video-intel - video driver
+# gufw - iptables frontend
 sudo pacman -S --noconfirm plymouth menumaker dunst picom tint2 \
 	lxappearance obconf lxinput lxrandr compton-conf polybar unzip \
 	libinput-gestures gestures libinput xf86-input-libinput connman \
-	gnome-keyring libsecret seahorse xorg-xbacklight acpi
+	gnome-keyring libsecret seahorse xorg-xbacklight acpi xf86-video-intel \
+	intltool
 
 # touchpad settings
 # rofi - window switcher, application launcher and dmenu replacement
-yay -S --noconfirm gpointing-device-settings rofi-git
+# connman-gtk - connman gui
+yay -S --noconfirm gpointing-device-settings rofi-git connman-gtk
 
 
 # Apps
@@ -122,9 +126,6 @@ chmod +x install.sh
 ./install.sh
 cd .. && rm -rf Orchis-theme
 
-rm -rf ~/.config/gtk-3.0
-mv config/gtk-3.0 ~/.config/
-
 # polybar
 git clone https://github.com/adi1090x/polybar-themes.git
 cd polybar-themes/polybar-12
@@ -158,6 +159,16 @@ cd .. && rm -rf termite-style
 
 
 # Configs
+
+# gtk
+rm -f /usr/share/gtk-3.0/settings.ini
+rm -f /usr/share/gtk-2.0/gtkrc
+sudo rm -f /etc/gtk-3.0/settings.ini
+sudo rm -f /etc/gtk-2.0/gtkrc
+cp config/gtk-3.0/settings.ini /usr/share/gtk-3.0/
+cp config/gtk-2.0/gtkrc /usr/share/gtk-2.0/
+sudo cp config/gtk-3.0/settings.ini /etc/gtk-3.0/
+sudo cp config/gtk-2.0/gtkrc /etc/gtk-2.0/
 
 # lightdm
 sudo mkdir -p /etc/lightdm && sudo rm -f /etc/lightdm/lightdm-gtk-greeter.conf
