@@ -1,7 +1,5 @@
 #!/bin/bash
 
 # telegram - messenger
-sudo pacman -S --noconfirm telegram-desktop
-
-# min - web browser
-yay -S --noconfirm min
+# brave - web browser
+sudo pacman -S --noconfirm telegram-desktop brave-beta

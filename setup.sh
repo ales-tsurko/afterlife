@@ -21,12 +21,14 @@ set -e
 # seahorse - gnome-keyring gui
 # xorg-xbacklight - changing screen brightness
 # xf86-video-intel - video driver
-# gufw - iptables frontend
+# ufw - cli for firewall configuration
+# gufw - iptables frontend (gui for ufw)
+# bitwarden - password manager
 sudo pacman -S --noconfirm plymouth menumaker dunst picom tint2 \
 	lxappearance obconf lxinput lxrandr compton-conf polybar unzip \
 	libinput-gestures gestures libinput xf86-input-libinput connman \
 	gnome-keyring libsecret seahorse xorg-xbacklight acpi xf86-video-intel \
-	intltool
+	intltool ufw gufw bitwarden-cli-bin
 
 # touchpad settings
 # rofi - window switcher, application launcher and dmenu replacement
@@ -40,7 +42,8 @@ yay -S --noconfirm gpointing-device-settings rofi-git connman-gtk
 # thunar - file browser
 # nomacs - image viewer
 # alacritty - terminal emulator
-sudo pacman -S --noconfirm neovim python-pynvim thunar nomacs alacritty
+sudo pacman -S --noconfirm neovim python-pynvim thunar-gtk3 \
+	thunar-archive-plugin-gtk3 nomacs alacritty
 
 # rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
@@ -161,14 +164,18 @@ cd .. && rm -rf termite-style
 # Configs
 
 # gtk
-rm -f /usr/share/gtk-3.0/settings.ini
-rm -f /usr/share/gtk-2.0/gtkrc
-sudo rm -f /etc/gtk-3.0/settings.ini
 sudo rm -f /etc/gtk-2.0/gtkrc
-cp config/gtk-3.0/settings.ini /usr/share/gtk-3.0/
+sudo rm -f /etc/gtk-3.0/settings.ini
+rm -f /usr/share/gtk-2.0/gtkrc
+rm -f /usr/share/gtk-3.0/settings.ini
+rm -rf ~/.config/gtk-2.0
+rm -rf ~/.config/gtk-3.0
 cp config/gtk-2.0/gtkrc /usr/share/gtk-2.0/
-sudo cp config/gtk-3.0/settings.ini /etc/gtk-3.0/
+cp config/gtk-3.0/settings.ini /usr/share/gtk-3.0/
 sudo cp config/gtk-2.0/gtkrc /etc/gtk-2.0/
+sudo cp config/gtk-3.0/settings.ini /etc/gtk-3.0/
+mv config/gtk-2.0 ~/.config/
+mv config/gtk-3.0 ~/.config/
 
 # lightdm
 sudo mkdir -p /etc/lightdm && sudo rm -f /etc/lightdm/lightdm-gtk-greeter.conf
@@ -220,6 +227,11 @@ sudo rm -f /etc/connman/main.conf
 sudo mv config/connman/main.conf /etc/connman/
 systemctl enable connman.service
 systemctl start connman.service
+
+# firewall
+systemctl enable ufw.service
+systemctl start ufw.service
+sudo ufw enable
 
 # gestures
 sudo gpasswd -a $USER input
