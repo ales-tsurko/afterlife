@@ -249,6 +249,10 @@ libinput-gestures-setup start
 mmaker -v OpenBox3
 
 
+# clean up
+sudo pacman -Rs $(pacman -Qdtq)
+
+
 # Done
 
 sudo reboot
