@@ -23,30 +23,33 @@ set -e
 # xf86-video-intel - video driver
 # ufw - cli for firewall configuration
 # gufw - iptables frontend (gui for ufw)
-sudo pacman -S --noconfirm plymouth menumaker dunst picom tint2 \
+# manjaro-settings-manager
+# manjaro-settings-manager-notifier
+sudo pacman -Syu --noconfirm plymouth menumaker dunst picom tint2 \
 	lxappearance obconf lxinput lxrandr compton-conf polybar unzip \
 	libinput-gestures gestures libinput xf86-input-libinput connman \
 	gnome-keyring libsecret seahorse xorg-xbacklight acpi xf86-video-intel \
-	intltool ufw gufw
+	intltool ufw gufw manjaro-settings-manager \
+	manjaro-settings-manager-notifier
 
 # touchpad settings
 # rofi - window switcher, application launcher and dmenu replacement
 # connman-gtk - connman gui
-yay -S --noconfirm gpointing-device-settings rofi-git connman-gtk
+yay -Syu --noconfirm gpointing-device-settings rofi-git connman-gtk
 
 
 # Apps
 
 # neovim - editor
 # termite - terminal emulator
-sudo pacman -S --noconfirm neovim python-pynvim termite
+sudo pacman -Syu --noconfirm neovim python-pynvim termite
 
 
 # Themes
 
 # fonts
-sudo pacman -S --noconfirm noto-fonts ttf-comfortaa ttf-fantasque-sans-mono
-yay -S --noconfirm ttf-mac-fonts ttf-ms-fonts
+sudo pacman -Syu --noconfirm noto-fonts ttf-comfortaa ttf-fantasque-sans-mono
+yay -Syu --noconfirm ttf-mac-fonts ttf-ms-fonts
 mkdir -p ~/.fonts
 
 mkdir -p nerd_fonts && cd nerd_fonts
@@ -69,8 +72,8 @@ sudo fc-cache -fv
 fc-cache -fv
 
 # icons
-yay -S --noconfirm flat-remix flat-remix-gtk
-sudo pacman -S --noconfirm papirus-icon-theme breeze-icons breeze-gtk
+yay -Syu --noconfirm flat-remix flat-remix-gtk
+sudo pacman -Syu --noconfirm papirus-icon-theme breeze-icons breeze-gtk
 
 # openbox
 mkdir -p ~/.themes
@@ -81,8 +84,8 @@ mv OBTheme-Collections/* ~/.themes/
 rm -rf OBTheme-Collections
 
 # gtk
-sudo pacman -S --noconfirm gtk-engines breeze-gtk 
-yay -S --noconfirm flat-remix-gtk
+sudo pacman -Syu --noconfirm gtk-engines breeze-gtk 
+yay -Syu --noconfirm flat-remix-gtk
 
 rm -rf ~/.themes/.git
 git clone https://github.com/addy-dclxvi/gtk-theme-collections 
@@ -133,12 +136,12 @@ cd ../..
 rm -rf polybar-themes
 
 # plymouth theme
-yay -S --noconfirm plymouth-theme-colorful-git
+yay -Syu --noconfirm plymouth-theme-colorful-git
 sudo plymouth-set-default-theme -l
 sudo plymouth-set-default-theme -R colorful
 
 # dwal - dynamic wallpapers
-sudo pacman -S --noconfirm xorg-xrandr feh
+sudo pacman -Syu --noconfirm xorg-xrandr feh
 git clone https://github.com/adi1090x/dynamic-wallpaper.git
 cd dynamic-wallpaper
 chmod +x install.sh
@@ -224,6 +227,10 @@ systemctl start connman.service
 systemctl enable ufw.service
 systemctl start ufw.service
 sudo ufw enable
+
+# pacman
+sudo rm -f /etc/pacman.conf
+sudo cp config/pacman/pacman.conf /etc/ 
 
 # gestures
 sudo gpasswd -a $USER input

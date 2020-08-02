@@ -4,7 +4,7 @@
 # brave - web browser
 # thunar - file browser
 # nomacs - image viewer
-sudo pacman -S --noconfirm telegram-desktop brave-beta thunar \
+sudo pacman -Syu --noconfirm telegram-desktop brave-beta thunar \
 	thunar-archive-plugin nomacs
 
 # Development
@@ -14,7 +14,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source $HOME/.cargo/env
 
 # node.js, yarn
-sudo pacman -S --noconfirm nodejs yarn
+sudo pacman -Syu --noconfirm nodejs yarn
 
 # cli tools, other
 
@@ -23,12 +23,12 @@ sudo pacman -S --noconfirm nodejs yarn
 # ripgrep - modern grep replacement
 # tree - directory listing
 # bandwhich - display network utilization
-sudo pacman -S --noconfirm bat cmake fzf ripgrep tree bandwhich
+sudo pacman -Syu --noconfirm bat cmake fzf ripgrep tree bandwhich
 
 # mcfly - better ctrl-r
 # ytop-bin - better top
 # tealdeer-bin - man pages briefly, tldr replacement
-yay -S --noconfirm mcfly ytop-bin tealdeer-bin
+yay -Syu --noconfirm mcfly ytop-bin tealdeer-bin
 
 # navi - terminal cheatsheets
 # starship - command prompt
