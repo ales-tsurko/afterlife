@@ -25,12 +25,13 @@ set -e
 # gufw - iptables frontend (gui for ufw)
 # manjaro-settings-manager
 # manjaro-settings-manager-notifier
+# qt5ct - qt configuration utility
 sudo pacman -Syu --noconfirm plymouth menumaker dunst picom tint2 \
 	lxappearance obconf lxinput lxrandr compton-conf polybar unzip \
 	libinput-gestures gestures libinput xf86-input-libinput connman \
 	gnome-keyring libsecret seahorse xorg-xbacklight acpi xf86-video-intel \
 	intltool ufw gufw manjaro-settings-manager \
-	manjaro-settings-manager-notifier
+	manjaro-settings-manager-notifier qt5ct
 
 # touchpad settings
 # rofi - window switcher, application launcher and dmenu replacement
@@ -171,6 +172,10 @@ sudo cp config/gtk-2.0/gtkrc /etc/gtk-2.0/
 sudo cp config/gtk-3.0/settings.ini /etc/gtk-3.0/
 mv config/gtk-2.0 ~/.config/
 mv config/gtk-3.0 ~/.config/
+
+# qt5
+touch ~/.profile
+echo 'export QT_QPA_PLATFORMTHEME="qt5ct"' >> ~/.profile
 
 # lightdm
 sudo mkdir -p /etc/lightdm && sudo rm -f /etc/lightdm/lightdm-gtk-greeter.conf
