@@ -15,12 +15,11 @@ Here's my configuration of Manjaro to switch to.
   and in **Install Desktop Environments** choose **openbox + openbox themes**
 - `git clone https://github.com/ales-tsurko/afterlife.git`
 - `cd afterlife`
-- `chmod +x setup.sh`
-- `./setup.sh`
-- `chmod +x install_apps.sh`
-- `./install_apps.sh`
+- `./setup.sh` (configures desktop)
+- `./install_apps.sh` (optional, installs additional apps)
 
 
 ### Setup Configuration
 
-You can configure installation by editing the `setup.sh` before run it.
+You can configure installation by editing the `setup.sh` and `install_apps.sh` 
+before run them.
