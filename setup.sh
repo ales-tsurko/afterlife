@@ -18,7 +18,6 @@ set -e
 # unzip - extracting zip archives
 # connman - network manager
 # pass - passwords management
-# seahorse - gnome-keyring gui
 # xorg-xbacklight - changing screen brightness
 # xf86-video-intel - video driver
 # ufw - cli for firewall configuration
@@ -29,7 +28,7 @@ set -e
 sudo pacman -Syu --noconfirm plymouth menumaker dunst picom tint2 \
 	lxappearance obconf lxinput lxrandr compton-conf polybar unzip \
 	libinput-gestures gestures libinput xf86-input-libinput connman \
-	pass libsecret seahorse xorg-xbacklight acpi xf86-video-intel \
+	pass libsecret xorg-xbacklight acpi xf86-video-intel \
 	intltool ufw gufw manjaro-settings-manager \
 	manjaro-settings-manager-notifier qt5ct
 
