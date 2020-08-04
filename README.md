@@ -88,8 +88,8 @@ Here's my configuration of Manjaro to switch to.
 
 - `git clone https://github.com/ales-tsurko/afterlife.git`
 - `cd afterlife`
-- `./setup.sh` (configures desktop)
-- `./install_apps.sh` (optional, installs additional apps)
+- `sudo ./setup.sh` (configures desktop)
+- `chmod +x install_apps.sh && sudo ./install_apps.sh` (optional, installs additional apps)
 
 If you want icons in the desktop menu either choose 
 **Advanced Settings -> Obmenu-Generator -> Generate a _static/dynamic_ menu with icons**
