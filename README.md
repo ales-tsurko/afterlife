@@ -91,6 +91,14 @@ Here's my configuration of Manjaro to switch to.
 - `./setup.sh` (configures desktop)
 - `./install_apps.sh` (optional, installs additional apps)
 
+If you want icons in the desktop menu either choose 
+**Advanced Settings -> Obmenu-Generator -> Generate a _static/dynamic_ menu with icons**
+or execute:
+
+```
+obmenu-generator -s -i
+```
+
 
 ### Setup Configuration
 
