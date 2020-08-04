@@ -25,7 +25,7 @@ Here's my configuration of Manjaro to switch to.
   ![partitioning](img/img00002.png)
   - when you return back to the **Prepare Installation** screen, choose **Mount Partitions**
   ![partitioning](img/img00003.png)
-  - select the ROOT partition (if you don't know which the root, choose the biggest one)
+  - select the ROOT partition (if you don't know which is the root, choose the biggest one)
   - select **ext4**
   ![partitioning](img/img00004.png)
   ![partitioning](img/img00005.png)
