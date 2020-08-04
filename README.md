@@ -12,7 +12,7 @@ Here's my configuration of Manjaro to switch to.
 ## Installation
 
 
-### Cusomized Manjaro Installation
+### Customized Manjaro Installation
 
 - download [Manjaro architect](https://manjaro.org/downloads/official/architect/) and boot
 - on the Welcome screen choose the **Boot** option
@@ -37,7 +37,7 @@ Here's my configuration of Manjaro to switch to.
   ![partitioning](img/img00008.png)
   - enter `/boot` as the mount point
   ![partitioning](img/img00009.png)
-  - when you return to the **Prepare Installation** screen, choose **Configure Installer MirroList**
+  - when you return to the **Prepare Installation** screen, choose **Configure Installer MirrorList**
   - select **Rank Mirrors by Speed**
   - select **Stable**
   - when you return the **Prepare Installation** screen, choose **Refresh Pacman Keys**
