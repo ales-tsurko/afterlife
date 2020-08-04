@@ -5,7 +5,7 @@ set -e
 # Desktop
 
 # Plymouth - loading (splash) screen
-# menumaker - menu rebuilder for openbox
+# obmenu-generator - menu generator for openbox
 # dunst - notifications
 # picom - compositor, for shadows and opacity
 # compton-conf - compton settings
@@ -25,12 +25,12 @@ set -e
 # manjaro-settings-manager
 # manjaro-settings-manager-notifier
 # qt5ct - qt configuration utility
-sudo pacman -Syu --noconfirm plymouth menumaker dunst picom tint2 \
+sudo pacman -Syu --noconfirm plymouth obmenu-generator dunst picom tint2 \
 	lxappearance obconf lxinput lxrandr compton-conf polybar unzip \
 	libinput-gestures gestures libinput xf86-input-libinput connman \
 	pass libsecret xorg-xbacklight acpi xf86-video-intel \
 	intltool ufw gufw manjaro-settings-manager \
-	manjaro-settings-manager-notifier qt5ct
+	manjaro-settings-manager-notifier qt5ct gtk2-perl perl-gtk3
 
 # touchpad settings
 # rofi - window switcher, application launcher and dmenu replacement
@@ -245,7 +245,7 @@ libinput-gestures-setup start
 
 
 # rebuild openbox menu
-mmaker -v OpenBox3
+obmenu-generator -s
 
 
 # clean up
