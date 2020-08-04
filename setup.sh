@@ -161,12 +161,12 @@ cd .. && rm -rf termite-style
 # gtk
 sudo rm -f /etc/gtk-2.0/gtkrc
 sudo rm -f /etc/gtk-3.0/settings.ini
-rm -f /usr/share/gtk-2.0/gtkrc
-rm -f /usr/share/gtk-3.0/settings.ini
+sudo rm -f /usr/share/gtk-2.0/gtkrc
+sudo rm -f /usr/share/gtk-3.0/settings.ini
 rm -rf ~/.config/gtk-2.0
 rm -rf ~/.config/gtk-3.0
-cp config/gtk-2.0/gtkrc /usr/share/gtk-2.0/
-cp config/gtk-3.0/settings.ini /usr/share/gtk-3.0/
+sudo cp config/gtk-2.0/gtkrc /usr/share/gtk-2.0/
+sudo cp config/gtk-3.0/settings.ini /usr/share/gtk-3.0/
 sudo cp config/gtk-2.0/gtkrc /etc/gtk-2.0/
 sudo cp config/gtk-3.0/settings.ini /etc/gtk-3.0/
 mv config/gtk-2.0 ~/.config/
