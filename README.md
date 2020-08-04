@@ -74,8 +74,8 @@ Here's my configuration of Manjaro to switch to.
   - **Generate FSTAB** - **fstabgen -U -p**
   ![partitioning](img/img00018.png)
   - **Set Hostname** - keep it **manjaro** or call whatever you wish
-  - **Set System Locale**, **Set Desktop Keyboard Layout** - follow instructions and
-  choose options specific to your location
+  - **Set System Locale**, **Set Desktop Keyboard Layout**, **Set Timezone and Clock** -
+  follow instructions and choose options specific to your location
   - **Set Root Password**
   - **Add New User**
   - return back to the **Main Menu** screen and choose **Done**
