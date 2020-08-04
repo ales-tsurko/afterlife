@@ -81,8 +81,8 @@ Here's my configuration of Manjaro to switch to.
   - **Install Custom Packages** - search for and install `termite`
   - return back to the **Main Menu** screen and choose **Done**
   - enter `sudo shutdown now`, unmount installation USB/CD and boot your system
-  - when the login screen will appear, hit `Ctrl-Alt-F4`, enter your credentials and proceed with the 
-  next instrcuctions
+  - when the login screen will appear, hit `Ctrl-Alt-F4`, enter your credentials and 
+  proceed with **Environment and Applications Installation**
 
 
 ### Environment and Applications Installation
