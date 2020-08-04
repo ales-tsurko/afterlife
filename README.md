@@ -86,12 +86,12 @@ Here's my configuration of Manjaro to switch to.
 
 ### Environment and Applications Installation
 
+> **NOTE**: you'll need to enter your password a few times during scripts execution.
+
 - `git clone https://github.com/ales-tsurko/afterlife.git`
 - `cd afterlife`
 - `./setup.sh` (configures desktop)
 - `chmod +x install_apps.sh && ./install_apps.sh` (optional, installs additional apps)
-
-> **NOTE**: you'll need to enter your password a few times during scripts execution.
 
 If you want icons in the desktop menu either choose 
 **Advanced Settings -> Obmenu-Generator -> Generate a _static/dynamic_ menu with icons**
