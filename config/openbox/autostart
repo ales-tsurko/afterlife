@@ -1,9 +1,0 @@
-~/.config/polybar/launch.sh
-tint2 &
-dwall -s mall &
-dunst -c ~/.config/dunst/dunstrc &
-gnome-keyring-daemon -r -d &
-picom &
-
-# show notes
-termite -e "nvim ${HOME}/Desktop/notes.md" &
